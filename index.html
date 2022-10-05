@@ -6,13 +6,13 @@
 
 	<meta charset="UTF-8"/>
 	<meta name="description" content="Welcome to the unofficial Polytopia battle calculator! Try out a variety of combat situations and see what the end result is going to be." />
-	<meta name="author" content="FrothFrenzy" />
+	<meta name="author" content="Sierk Rosema" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<meta property="og:url" content="https://frothfrenzy.github.io/polytopiacalculator/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Polytopia Battle Calculator" />
-	<meta property="og:description" content="Welcome to the unofficial Polytopia battle calculator! Try out a variety of combat situations and see what the end result is going to be." />
+	<meta property="og:description" content="Welcome to a Polytopia battle calculator! Try out a variety of combat situations and see what the end result is going to be." />
 	<meta property="og:image" content="https://frothfrenzy.github.io/polytopiacalculator/Other/BigSwords.png" />
 
 	<title>Polytopia Battle Calculator</title>
@@ -950,8 +950,8 @@ function attackerfill()
 			break;
 		case "Knight":
 			document.getElementById("attack").value = "3.5";
-			document.getElementById("attackhp").value = "15";
-			document.getElementById("attackmaxhp").value = "15";
+			document.getElementById("attackhp").value = "10";
+			document.getElementById("attackmaxhp").value = "10";
 			break;
 		case "Giant":
 			document.getElementById("attack").value = "5";
@@ -1258,8 +1258,8 @@ function attackerveteran()
 			break;
 		case "Knight":
 			document.getElementById("attack").value = "3.5";
-			document.getElementById("attackhp").value = "15";
-			document.getElementById("attackmaxhp").value = "15";
+			document.getElementById("attackhp").value = "10";
+			document.getElementById("attackmaxhp").value = "10";
 			break;
 		case "Amphibian":
 			document.getElementById("attack").value = "2";
@@ -2506,7 +2506,7 @@ function expandcontainer(identifier)
 		document.getElementById(expandindicator).innerHTML = "-";
 		document.getElementById(answercontainer).style.display = "block";
 		answersexpanded++;
-		if (answersexpanded == 18)
+		if (answersexpanded == 16)
 		{
 			document.getElementById("expandallindicator1").innerHTML = "- Collapse all";
 			document.getElementById("expandallindicator2").innerHTML = "- Collapse all";
@@ -2531,7 +2531,7 @@ function expandall(indicator)
 		var expandindicator = "";
 		var answercontainer = "";
 		
-		for (i = 0; i < 20; i++)
+		for (i = 0; i < 16; i++)
 		{
 			expandindicator = "expandindicator" + i;
 			answercontainer = "answercontainer" + i;
@@ -2541,7 +2541,7 @@ function expandall(indicator)
 				document.getElementById(answercontainer).style.display = "block";
 			}
 		}
-		answersexpanded = 20;
+		answersexpanded = 16;
 		document.getElementById("expandallindicator1").innerHTML = "- Collapse all";
 		document.getElementById("expandallindicator2").innerHTML = "- Collapse all";
 		if (indicator == 2)
@@ -2554,7 +2554,7 @@ function expandall(indicator)
 		var expandindicator = "";
 		var answercontainer = "";
 		
-		for (i = 0; i < 20; i++)
+		for (i = 0; i < 16; i++)
 		{
 			expandindicator = "expandindicator" + i;
 			answercontainer = "answercontainer" + i;
@@ -2649,15 +2649,13 @@ function refreshattackers()
 
 <noscript>
 	<h2>Polytopia Battle Calculator</h2>
-	<i style="display: inline-block">(by FrothFrenzy)</i>
-	<p>Javascript is required to use the calculator!</p>
-	<p>If you are worried about potential security issues, you can always review the code at the project's <a href="https://github.com/frothfrenzy/polytopiacalculator/blob/master/index.html">GitHub repository</a>.</p>
+	<i style="display: inline-block">(Created by FrothFrenzy, changed by Sierk Rosema)</i>
+	<p>Javascript is required to use the calculator.</p>
+	<p>The code of this project can be found at <a href="https://github.com/swrosema/Polytopia_calculator">GitHub repository</a>.</p>
 </noscript>
 <div id="main" style="visibility: hidden">
-  <p onclick="this.style.display = 'none'">A valued member of the (Discord) community, <a href="https://discord.com/channels/@me/217385992837922819">@jd#0001</a>, picked up this project.<br />You can find the supported website here: <a href="https://frothfrenzy.polycalculatorbot.com/">https://frothfrenzy.polycalculatorbot.com/</a></p>
 	<h2>Polytopia Battle Calculator</h2>
-	<span style="display: inline-block"><i>(by FrothFrenzy)</i>
-	<i id="shortlink">[<a href="https://frothfrenzy.github.io/polytopiacalculator/?short">Short version</a>]</i></span>
+	<span style="display: inline-block"><i>(Created by FrothFrenzy, changed by Sierk Rosema)</i></span>
 
 	<form id="values" onsubmit="return false" onkeypress="if (document.getElementById('multibutton').innerText == 'Single') {return event.keyCode != 13;}">
 	
@@ -2857,11 +2855,11 @@ function refreshattackers()
 	</div>
 	
 	<div class="q" onclick="expandcontainer(2)">
-		<div class="p"><b>How to use the Multi option?</b></div>
+		<div class="p"><b>To be updated.</b></div>
 		<div id="expandindicator2" class="ei">+</div>
 	</div>
 	<div id="answercontainer2" class="a">
-		<p>This option allows you to recreate a battle state so you can try a variety of approaches in order to achieve optimal results. To use it, press the Multi button. This makes the calculator switch modes. You can always return to the original mode by pressing the Single button.<br/><br/>When in Multi mode, do the following:<br/><br/>- Create a battlefield of attackers and defenders by selecting between Choose Attacker or Choose Defender at the top.<br/><br/>- Select a unit type from the unit template list, change its current HP if necessary and tick additional modifiers, if any.<br/><br/>- Press the Create Unit! button. This creates a unit on the battlefield. If you created a defender and ticked a defensive bonus, the unit will have a letter indicating the bonus type in their upper right corner (D/W for defense/wall bonus).<br/><br/>- Repeat this process until you create the desired battle situation. You can create any number of units this way.<br/><br/>- Before you start battling, it is recommended that you press the Save State button. This will preserve the current battle situation and whatever you do, you can always press Load State to reload the battle state you previously saved. This is very useful when you want to try out multiple methods to resolve the situation.<br/><br/>- You can start battling now. Simply press on an attacker to select it, and then press on a defender. If possible, the battle will automatically take place. As long as you keep creating new units and/or have units available, you can perform any number of calculations.<br/><br/>- To delete units, press the Delete Units button and select the attackers or defenders you want to delete. Units selected this way will instantly disappear. To stop deleting, press the Delete Units button again. Pressing other buttons such as Create Unit! or opening the FAQ also stops the deletion process. When active, the Delete Units button will have an (x) appear within it.<br/><br/>- Heal units by pressing the +2 button, and then select the units you want to heal. This heals the selected unit for +2 HP, and you can select any unit any number of times. To stop healing, press the +2 button again, but pressing other buttons or opening the FAQ also stops the process. When active, the +2 button will have an (x) appear within it. You cannot heal units over their maximum HP value, but you can resurrect units this way. <br/><br/>As per standard gameplay mechanics, most units can attack only once. Once a unit is either dead or unavailable for attack, its border is automatically grayed out and it cannot be selected again. There are some exceptions...<br/><br/>Knights and navalons will be able to continue attacking as long as they are destroying enemy units. They become unavailable once an attack doesn't destroy an enemy unit, but you can also do so manually by pressing on them again while they are selected. This usually just deselects any unit but if a knight or a navalon already performed an attack, it will become unavailable this way.<br/><br/>Fire dragon's first attack is always its main attack. Every subsequent attack is its splash attack, which is indicated by the letter S appearing in its upper right corner. If the fire dragon's main attack was retaliated against, splash attacks will still be calculated with its original HP in mind. This is true even if the fire dragon was destroyed by the retaliation, in which case it will be treated as available to perform splash attacks. Since the main attack and all of the collateral splash attacks happen at once, the fire dragon becomes unavailable once you deselect it or select any other attacker after performing its main attack. Saving a state or prompting to delete units also triggers this.<br/><br/>Other than the exceptions above, you can freely select and deselect your available attackers however you wish. The calculator remembers which units attacked and which did not.<br/><br/>You can freeze defenders by pressing on a defender you want to freeze three times repeatedly. Confirmation messages will appear under the "Feedback:" text, with the unit name being shown and a number in brackets which denotes the unit's position in the defender list. Once the unit is frozen its border will turn blue. You can unfreeze units in the same way. Ice archers will automatically freeze units with their attacks.<br/><br/>Another thing to note about the attacker knight is that its attack value will show as a bolded 3 instead of a regular 3.5. This is deliberate because additional symbols didn't fit well into the unit container in some battle situations. It otherwise has no effect on the battle result.<br/><br/>You can refresh all of your attackers by pressing the "Attackers:" text three times repeatedly. This will make all non-destroyed, unavailable attackers able to attack again.<br/><br/>When selecting an available ranged unit, you are prompted with a No retaliation checkbox which prevents enemy units from retaliating. This setting is automatically ticked by default. However, if you have to perform a big number of calculations that take place between ranged units (such as in a sea battle), you can change this default setting by pressing on the "Defenders:" text. This will make enemy units retaliate by default. You can change back to the original setting by pressing the text again.<br/><br/>Since this mode uses some sprites from the game, the images won't appear if you download the calculator to use it offline. You'd have to download the image folders also while preserving the pathing context. Just in case, I'll be keeping the old calculator .html file on the Github repository if this update breaks anything (as <a href="https://frothfrenzy.github.io/polytopiacalculator/oldindex.html">oldindex.html</a>). Only Imperius and Xin-Xi sprites will be available out of respect for the developer.<br/><br/>The Multi mode uses the same code as the original single-battle calculator. This is why you will see the same values being filled and the same results being reported as before, even though most of them aren't visible in Multi mode. The battle history is also available while in Multi mode with additional info being preserved, including the No retaliation clause and the fire dragon's attack type.<br/><br/>To prevent accidental resets of huge battlefields, a button to clear everything isn't included. Simply refresh the calculator page if you want to start over, or delete the leftover units by pressing the Delete Units button.</p>
+		<p>To be updated.</p>
 	</div>
 	
 	<div class="q" onclick="expandcontainer(3)">
@@ -2925,7 +2923,7 @@ function refreshattackers()
 		<div id="expandindicator10" class="ei">+</div>
 	</div>
 	<div id="answercontainer10" class="a">
-		<p>Any damaged unit that does nothing during its turn can recover some of its lost HP instead. The amount is 4 HP if it is in friendly territory, and 2 HP if it is anywhere else. This happens automatically at the end of your turn, but you can choose to do so manually.<br/><br/>There are only two situations in the game where you can benefit from manually recovered HP. When the damaged unit is in a city which is about to be upgraded in order to activate the super unit reward, the damaged unit will be displaced from the city by the appearing super unit. This is treated as a regular move action, and the damaged unit will no longer be able to recover its HP as a result. Heal the unit first, then upgrade the city to prevent this. A similar thing happens when you're playing Elyrion and your damaged unit is on a tile where you're about to train a polytaur. It is solved in the same way - heal the unit first, then train the polytaur.<br/><br/>Mind benders also have the Heal Others ability which allows them to restore 4 HP to all friendly units adjacent to them. This stacks with the intrinsic Recover ability and heals from other mind benders. You can unlock the mind bender unit by researching Philosophy.</p>
+		<p>Any damaged unit that does nothing during its turn can recover some of its lost HP instead. The amount is 4 HP if it is in friendly territory, and 2 HP if it is anywhere else. This happens automatically at the end of your turn, but you can choose to do so manually.<br/><br/>There is no specific advantage to manually recovering HP.<br/><br/>Mind benders also have the Heal Others ability which allows them to restore 4 HP to all friendly units adjacent to them. This stacks with the intrinsic Recover ability and heals from other mind benders. You can unlock the mind bender unit by researching Philosophy.</p>
 	</div>
 	
 	<div class="q" onclick="expandcontainer(11)">
@@ -2978,83 +2976,22 @@ function refreshattackers()
 		<div id="expandindicator15" class="ei">+</div>
 	</div>
 	<div id="answercontainer15" class="a">
-		<p>Yes you can. Follow these instructions:<br/><br/>
-		<i>Any platform</i>: If you don't quit your browser app, you should be able to use the calculator without internet access as long as the browser stays in memory. The calculator is a static website and doesn't require the use of bandwith. Otherwise, most desktop browsers support saving pages so you can store them offline for later use. Some mobile browsers like Chrome also support this.<br/><br/>
-		<i>PC</i>: Go to the calculator website, right-click on any empty space and press Save as... or Save Page As... to get the index.html file. Alternatively, you can download the file from my <a href="https://drive.google.com/open?id=0B7HGBGCiKHGkSUExdEs3Q2J1UG8" target="_blank">Google Drive</a> or <a href="https://github.com/frothfrenzy/polytopiacalculator" target="_blank">GitHub</a>. After you downloaded it, simply drag the .html file into your browser to run the calculator.<br/><br/>
-		<i>iOS</i>: Repeat the PC process. Download an app called HTML Viewer Q by Spica. Connect your device to iTunes. In iTunes, select your device and go to File Sharing. Select HTML Viewer, press Add File and find the .html file you downloaded on your PC. Disconnect your device, run HTML Viewer and press on a book-like icon at the bottom right. Switch from Bookmarks to Files and select the downloaded .html file.<br/><br/>
-		<i>Android</i>: Either repeat the PC process, or download the Google Drive app to fetch the .html file from my <a href="https://drive.google.com/open?id=0B7HGBGCiKHGkSUExdEs3Q2J1UG8" target="_blank">Google Drive</a>. If you used the PC, connect your device and transfer the .html file to it. If you used Google Drive, the file should be in your Downloads folder. Download the HTML Viewer app by Yogev Haham and run it. Press the paper-like icon at the upper right. Find and select the downloaded .html file, then press the browser view icon in the upper right.</p>
-	</div>
-	
-	<div class="q" onclick="expandcontainer(16)">
-		<div class="p"><b>Who are you?</b></div>
-		<div id="expandindicator16" class="ei">+</div>
-	</div>
-	<div id="answercontainer16" class="a">
-		<p>I'm a big fan of the game and I've been playing it since early 2017. I have a tendency to learn every game I play in great detail as I'm hoping to pursue game design at some point. For about a year I was active over at the game's Discord server, which you should definitely join if you want to improve your game and meet other players. An invite to the server is posted at the bottom of this FAQ. I have since left Discord so I can focus on other things.</p>
-	</div>
-	
-	<div class="q" onclick="expandcontainer(17)">
-		<div class="p"><b>How can I contact you?</b></div>
-		<div id="expandindicator17" class="ei">+</div>
-	</div>
-	<div id="answercontainer17" class="a">
-		<p>You can contact me via <a href="mailto:frothdiscord@gmail.com" target="_top">e-mail</a>. I will no longer be updating the calculator, but other inquiries are always welcome.</p>
-	</div>
-	
-	<div class="q" onclick="expandcontainer(18)">
-		<div class="p"><b>What are Discord challenges?</b></div>
-		<div id="expandindicator18" class="ei">+</div>
-	</div>
-	<div id="answercontainer18" class="a">
-		<p>These are player-made, self-imposed limitations that alter the gameplay in some fundamental way. You can find the challenge list at the bottom of this FAQ. To be eligible for the scoreboard, you have to join Discord and post your results in the appropriate channel.</p>
-	</div>
-	
-	<div class="q" onclick="expandcontainer(19)">
-		<div class="p"><b>How can I become a better player?</b></div>
-		<div id="expandindicator19" class="ei">+</div>
-	</div>
-	<div id="answercontainer19" class="a">
-		<p>Read through strategies on the game wikia, Reddit and Discord. Watch videos of experienced players on Youtube. Ask the player-base for help. Most important of all - play a lot, maximize your income and try to learn the mechanics behind the game. It will come in time. The links to help you with this are provided below.</p>
+		<p>
+        Yes you can. If you don't quit your browser app, you should be able to use the calculator without internet access as long as the browser stays in memory. The calculator is a static website and doesn't require the use of bandwith. Otherwise, most desktop browsers support saving pages so you can store them offline for later use. Some mobile browsers like Chrome also support this.<br/><br/>
+        </p>
 	</div>
 	
 	<div style="float: left; position: relative; top: 6px; width: 100%">
 		<p><b style="float: left; margin-top: 4px;">Links:</b><a href="javascript:;" class="textpress" id="expandallindicator2" style="float: right" onclick="expandall(2)">+ Expand all</a></p><br/>
 		
-		<p style="margin-top: 16px"><a href="https://discord.gg/YTFTuAq?" target="_blank">Discord</a><br/>
-		<a href="http://polytopia.wikia.com/wiki/The_Battle_of_Polytopia_Wikia" target="_blank">Wikia</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/" target="_blank">Reddit</a><br/><br/>
-		
+		<p style="margin-top: 16px">
 		<a href="http://www.midjiwan.com/polytopia.html" target="_blank">Official Game Website</a><br/>
-		<a href="https://www.facebook.com/polytopia/" target="_blank">Official Game Facebook</a><br/>
-		<a href="https://www.facebook.com/groups/1863426817282664/" target="_blank">Official Facebook Multiplayer Group</a><br/><br/>
-		
-		<a href="https://twitter.com/midjiwan?lang=en" target="_blank">Midjiwan's Twitter</a><br/>
-		<a href="https://www.instagram.com/midjiwan/" target="_blank">Midjiwan's Instagram</a><br/>
-		<a href="https://www.youtube.com/channel/UCtBjQ-1WqlHrAjSaJUpKb0w" target="_blank">Midjiwan's Youtube Channel</a><br/>
-		<a href="http://polytopia.wikia.com/wiki/Thread:920" target="_blank">Midjiwan's Wikia Post</a><br/>
-		<a href="https://polytopia.wikia.com/wiki/Units" target="_blank">Wikia Unit Page</a><br/><br/>
-		
-		<a href="https://drive.google.com/open?id=0B7HGBGCiKHGkSFN2clluYnM0QlU" target="_blank">My Screenshots</a><br/><br/>
+		<a href="http://polytopia.wikia.com/wiki/The_Battle_of_Polytopia_Wikia" target="_blank">Wikia</a><br/>
+        <a href="https://discord.gg/YTFTuAq?" target="_blank">Discord</a><br/>
+		<a href="https://www.reddit.com/r/Polytopia/" target="_blank">Reddit</a><br/><br/>
 
-		<a href="https://www.youtube.com/playlist?list=PLQqaZ-kEj4Exd6EMDYTadaWbsFMoROwzw" target="_blank">My Videos</a><br/>
-		<a href="https://www.youtube.com/channel/UCg0jaVEMIuy_sQ9t-VRuHXw/videos?disable_polymer=1" target="_blank">Tupp's Videos</a><span> (Recommended!)</span><br/>
-		<a href="https://www.youtube.com/channel/UCEmKzVafcBQauZylIoomojw/videos?disable_polymer=1" target="_blank">Ze Biggest Potato's Videos</a><br/><br/>
-
-		<a href="https://www.reddit.com/r/Polytopia/comments/6cjc4j/guide_quick_and_simple_guide_to_get_3_start_in/" target="_blank">Domination Guide by Airgibbo</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/comments/6fslca/bardur_100k_points_strategy_guide/" target="_blank">Perfection Guide by Tupp</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/comments/8b2f4s/guide_and_benchmarks_for_120k_in_perfection/" target="_blank">Perfection Guide by ameredit</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/comments/87urp6/consistently_over_100k_perfection_guide/" target="_blank">Perfection Guide by KiranKat</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/comments/5qbppw/my_guide_to_high_scores_in_perfection_mode_based/" target="_blank">Perfection Guide by Illinois_Jones</a><br/>
-		<a href="https://www.reddit.com/r/Polytopia/comments/85asn3/advanced_multiplayer_tribe_by_tribe_guide/" target="_blank">Multiplayer Guide by Will2Brown</a><br/>
-		<a href="https://docs.google.com/document/d/1-FeDFSUGY9ugUPNfTNqqrzzD8vfQ2Is_6FL_-XTrnrc" target="_blank">Comprehensive Guide by Gerenuk</a><br/><br/>
-		
-		<a href="https://drive.google.com/open?id=10vODoFZk-i670i56je_6G-XyZK7qHHEqp7xA-nYW4X8" target="_blank">Challenge List</a><br/><br/>
-
-		<a href="https://github.com/frothfrenzy/polytopiacalculator" target="_blank">My GitHub</a><br/><br/>
-		
-		<a href="https://github.com/frothfrenzy/polytopiacalculator/blob/master/Changelog.md" target="_blank">Changelog</a><br/><br/><br/>
-
-		<a href="javascript:;" class="textpress" onclick="return show('main', 'faq')" target="_top">&lt;&lt;&lt; Back to the calculator!</a></p><br/>
+		<a href="javascript:;" class="textpress" onclick="return show('main', 'faq')" target="_top">&lt;&lt;&lt; Back to the calculator!</a>
+        </p><br/>
 	</div>
 </div>
 </body>
